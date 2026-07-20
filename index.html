@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectUP Intelligence | Engenharia de Soluções em Inteligência Artificial</title>
+    <meta name="description" content="Engenharia de soluções em IA: Agentes Inteligentes, Visão Computacional, Automação Empresarial, Apps Personalizados e Consultoria de IA para Empresas.">
+    <meta name="keywords" content="Inteligência Artificial, Visão Computacional, Agentes de IA, Automação Empresarial, Reconhecimento Facial, Jiu-Jitsu App, OCR Inteligente, Engenharia de IA">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Particle / Neural Canvas Overlay -->
+    <canvas id="neural-canvas"></canvas>
+
+    <!-- Navigation Header -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="brand-logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 100 100" class="brand-svg">
+                        <defs>
+                            <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#00F2FE" />
+                                <stop offset="100%" stop-color="#00F5A0" />
+                            </linearGradient>
+                            <linearGradient id="brain-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#7F00FF" />
+                                <stop offset="100%" stop-color="#00F2FE" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Stylized Face & Neural Circuit -->
+                        <path d="M 25 70 C 15 50 25 25 45 20 C 50 18 55 18 60 20 C 78 26 82 48 75 65 C 70 76 58 85 45 85 C 32 85 25 75 25 70 Z" fill="none" stroke="url(#logo-grad)" stroke-width="4"/>
+                        <path d="M 35 45 Q 45 35 55 45 T 75 45" fill="none" stroke="url(#brain-grad)" stroke-width="3" stroke-dasharray="3,3"/>
+                        <circle cx="45" cy="35" r="4" fill="#00F2FE" />
+                        <circle cx="60" cy="30" r="3" fill="#00F5A0" />
+                        <circle cx="65" cy="48" r="4" fill="#7F00FF" />
+                        <circle cx="50" cy="60" r="3" fill="#00F2FE" />
+                        <line x1="45" y1="35" x2="60" y2="30" stroke="#00F2FE" stroke-width="1.5"/>
+                        <line x1="60" y1="30" x2="65" y2="48" stroke="#00F5A0" stroke-width="1.5"/>
+                        <line x1="45" y1="35" x2="50" y2="60" stroke="#7F00FF" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="brand-title">CONNECT<span class="highlight">UP</span></span>
+                    <span class="brand-sub">INTELLIGENCE</span>
+                </div>
+            </a>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#posicionamento" class="nav-link">Engenharia de IA</a>
+                <a href="#especialidades" class="nav-link">Especialidades</a>
+                <a href="#demos" class="nav-link">Demos Interativas</a>
+                <a href="#cases" class="nav-link">Case Jiu-Jitsu</a>
+                <a href="#diagnostico" class="nav-link highlight-link">Diagnóstico IA</a>
+                <a href="#segmentos" class="nav-link">Segmentos</a>
+                <a href="#contato" class="btn btn-outline nav-btn">Falar com Engenheiro</a>
+            </nav>
+
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero-section" id="hero">
+            <div class="hero-bg-glow"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="badge-pill">
+                        <span class="badge-dot"></span> Engenharia de Soluções sob medida em IA
+                    </div>
+                    <h1 class="hero-title">
+                        Engenharia de Soluções em <span class="text-gradient">Inteligência Artificial</span>
+                    </h1>
+                    <p class="hero-description">
+                        Projetamos, desenvolvemos e implementamos aplicações inteligentes que combinam 
+                        <strong>IA Generativa</strong>, <strong>Visão Computacional</strong>, <strong>Automação Empresarial</strong>, 
+                        <strong>Análise de Dados</strong> e <strong>Desenvolvimento de Software</strong> para transformar processos, produtos e experiências digitais.
+                    </p>
+                    <div class="hero-cta-group">
+                        <a href="#diagnostico" class="btn btn-primary btn-glow">
+                            <i data-lucide="cpu"></i> Simular Diagnóstico de IA
+                        </a>
+                        <a href="#demos" class="btn btn-glass">
+                            <i data-lucide="play-circle"></i> Testar Demos ao Vivo
+                        </a>
+                    </div>
+
+                    <div class="hero-stats grid-4">
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="100">0</div><span class="stat-plus">%</span>
+                            <div class="stat-label">Desenvolvimento Customizado</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="7">0</div>
+                            <div class="stat-label">Pilares de Especialização</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="15">0</div><span class="stat-plus">+</span>
+                            <div class="stat-label">Setores de Atuação</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="24">0</div><span class="stat-plus">/7</span>
+                            <div class="stat-label">Agentes Operando</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="visual-card-wrapper">
+                        <div class="hero-image-container">
+                            <img src="assets/hero_ai.png" alt="ConnectUP Intelligence Neural Core" class="hero-img">
+                            <div class="scan-line"></div>
+                        </div>
+                        
+                        <!-- Floating Tech Tags -->
+                        <div class="floating-tag tag-1">
+                            <i data-lucide="bot"></i> Agentes Autônomos (WhatsApp/SDR)
+                        </div>
+                        <div class="floating-tag tag-2">
+                            <i data-lucide="scan-face"></i> Visão Computacional & OCR
+                        </div>
+                        <div class="floating-tag tag-3">
+                            <i data-lucide="workflow"></i> Automação de Processos
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- POSICIONAMENTO ESTRATÉGICO -->
+        <section class="section section-dark" id="posicionamento">
+            <div class="container">
+                <div class="section-header text-center">
+                    <div class="badge-tag">Nosso Posicionamento</div>
+                    <h2>Muito Além de Chatbots: <span class="text-gradient">Engenharia de IA para Negócios</span></h2>
+                    <p class="section-subtitle">
+                        Na ConnectUP Intelligence, não vendemos soluções genéricas de prateleira. Desenvolvemos ecossistemas inteligentes integrados à arquitetura do seu negócio.
+                    </p>
+                </div>
+
+                <div class="comparison-grid">
+                    <div class="comparison-card traditional">
+                        <div class="comparison-header">
+                            <i data-lucide="x-circle" class="icon-danger"></i>
+                            <h3>Abordagem Tradicional de Mercado</h3>
+                        </div>
+                        <ul>
+                            <li><i data-lucide="minus"></i> Chatbots engessados baseados apenas em regras estáticas.</li>
+                            <li><i data-lucide="minus"></i> Sistemas isolados sem integração com ERPs, CRMs ou bancos de dados.</li>
+                            <li><i data-lucide="minus"></i> Dependência de plataformas genéricas sem controle de dados.</li>
+                            <li><i data-lucide="minus"></i> Soluções limitadas apenas ao atendimento básico ao cliente.</li>
+                        </ul>
+                    </div>
+
+                    <div class="comparison-card connectup featured-card">
+                        <div class="featured-badge">ConnectUP Standard</div>
+                        <div class="comparison-header">
+                            <i data-lucide="check-circle-2" class="icon-success"></i>
+                            <h3>Engenharia ConnectUP Intelligence</h3>
+                        </div>
+                        <ul>
+                            <li><i data-lucide="sparkles"></i> <strong>Agentes de IA Multossistemas:</strong> IA que executa ações reais nos seus sistemas.</li>
+                            <li><i data-lucide="sparkles"></i> <strong>Visão Computacional Avançada:</strong> Reconhecimento facial, OCR e monitoramento por imagem.</li>
+                            <li><i data-lucide="sparkles"></i> <strong>Desenvolvimento Sob Medida:</strong> Softwares e Apps nativos com IA embarcada na UX.</li>
+                            <li><i data-lucide="sparkles"></i> <strong>Segurança & Arquitetura Corporativa:</strong> Garantia de privacidade e alinhamento estratégico.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NOSSAS ESPECIALIDADES -->
+        <section class="section" id="especialidades">
+            <div class="container">
+                <div class="section-header text-center">
+                    <div class="badge-tag">Nossa Expertise</div>
+                    <h2>Nossas <span class="text-gradient">Especialidades em IA</span></h2>
+                    <p class="section-subtitle">Soluções completas para resolver desafios operacionais e impulsionar a inovação digital da sua empresa.</p>
+                </div>
+
+                <div class="specialties-grid">
+                    
+                    <!-- 1. Agentes de IA -->
+                    <div class="specialty-card" data-category="agentes">
+                        <div class="card-icon">
+                            <i data-lucide="bot"></i>
+                        </div>
+                        <h3>Agentes de Inteligência Artificial</h3>
+                        <p>Agentes inteligentes capazes de atender clientes, vender, oferecer suporte, executar processos internos e integrar informações entre diferentes sistemas.</p>
+                        <div class="app-tags">
+                            <span>WhatsApp</span>
+                            <span>SDR com IA</span>
+                            <span>Suporte Técnico</span>
+                            <span>Cobrança</span>
+                            <span>Agendamentos</span>
+                            <span>Pós-Venda</span>
+                            <span>RH & Help Desk</span>
+                        </div>
+                    </div>
+
+                    <!-- 2. Automação Empresarial -->
+                    <div class="specialty-card" data-category="automacao">
+                        <div class="card-icon">
+                            <i data-lucide="workflow"></i>
+                        </div>
+                        <h3>Automação Empresarial com IA</h3>
+                        <p>Automatizamos processos repetitivos utilizando Inteligência Artificial, integrações e fluxos inteligentes para máxima eficiência operacional.</p>
+                        <div class="app-tags">
+                            <span>Aprovação de Documentos</span>
+                            <span>Geração de Propostas</span>
+                            <span>Fluxos Financeiros</span>
+                            <span>Automação Comercial</span>
+                            <span>Integração de Sistemas</span>
+                        </div>
+                    </div>
+
+                    <!-- 3. Desenvolvimento de Apps com IA -->
+                    <div class="specialty-card" data-category="apps">
+                        <div class="card-icon">
+                            <i data-lucide="smartphone"></i>
+                        </div>
+                        <h3>Desenvolvimento de Apps com IA</h3>
+                        <p>Criamos aplicativos personalizados onde a Inteligência Artificial é a peça central da experiência e produtividade do usuário.</p>
+                        <div class="app-tags">
+                            <span>Apps para Academias</span>
+                            <span>Reconhecimento Facial</span>
+                            <span>Controle de Acesso</span>
+                            <span>Assistentes Embarcados</span>
+                            <span>Recomendações com IA</span>
+                        </div>
+                    </div>
+
+                    <!-- 4. Visão Computacional -->
+                    <div class="specialty-card" data-category="visao">
+                        <div class="card-icon">
+                            <i data-lucide="scan-face"></i>
+                        </div>
+                        <h3>Visão Computacional</h3>
+                        <p>Projetos que utilizam câmeras e IA para interpretar imagens e vídeos em tempo real para automação e segurança.</p>
+                        <div class="app-tags">
+                            <span>Identificação de Pessoas</span>
+                            <span>Controle de Acesso</span>
+                            <span>OCR Inteligente</span>
+                            <span>Monitoramento Operacional</span>
+                            <span>Contagem de Pessoas & Objetos</span>
+                        </div>
+                    </div>
+
+                    <!-- 5. Conteúdo Criativo com IA -->
+                    <div class="specialty-card" data-category="criativo">
+                        <div class="card-icon">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <h3>Conteúdo Criativo com IA</h3>
+                        <p>Produzimos materiais de comunicação utilizando IA como ferramenta de criação e aceleração exponencial de produção.</p>
+                        <div class="app-tags">
+                            <span>Vídeos Institucionais</span>
+                            <span>Avatares com IA</span>
+                            <span>Locução por IA</span>
+                            <span>Edição Inteligente</span>
+                            <span>Imagens Publicitárias</span>
+                            <span>Animações</span>
+                        </div>
+                    </div>
+
+                    <!-- 6. Desenvolvimento de Produtos com IA -->
+                    <div class="specialty-card" data-category="produtos">
+                        <div class="card-icon">
+                            <i data-lucide="layers"></i>
+                        </div>
+                        <h3>Desenvolvimento de Produtos com IA</h3>
+                        <p>Criamos produtos digitais completos e plataformas SaaS utilizando Inteligência Artificial como diferencial competitivo.</p>
+                        <div class="app-tags">
+                            <span>Plataformas SaaS</span>
+                            <span>Sistemas Inteligentes</span>
+                            <span>Assistentes Corporativos</span>
+                            <span>Marketplaces Inteligentes</span>
+                            <span>Ferramentas de Produtividade</span>
+                        </div>
+                    </div>
+
+                    <!-- 7. Consultoria em IA -->
+                    <div class="specialty-card full-width-card" data-category="consultoria">
+                        <div class="card-icon">
+                            <i data-lucide="compass"></i>
+                        </div>
+                        <div class="card-body-full">
+                            <h3>Consultoria Estratégica em Inteligência Artificial</h3>
+                            <p>Auxiliamos empresas a identificar onde a IA pode gerar maior impacto financeiro e operacional, orientando desde a arquitetura até a implantação.</p>
+                            <div class="consulting-steps">
+                                <div class="c-step"><span class="step-num">01</span> Diagnóstico de Processos</div>
+                                <div class="c-step"><span class="step-num">02</span> Mapeamento de Oportunidades</div>
+                                <div class="c-step"><span class="step-num">03</span> Planejamento Estratégico</div>
+                                <div class="c-step"><span class="step-num">04</span> Arquitetura & Seleção Tech</div>
+                                <div class="c-step"><span class="step-num">05</span> Implantação & Treinamento</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- DEMOS INTERATIVAS AO VIVO -->
+        <section class="section section-dark" id="demos">
+            <div class="container">
+                <div class="section-header text-center">
+                    <div class="badge-tag">Experimente no Navegador</div>
+                    <h2>Demos Interativas de <span class="text-gradient">IA em Ação</span></h2>
+                    <p class="section-subtitle">Testes em tempo real simulando nossos Agentes de IA e nossa tecnologia de Visão Computacional.</p>
+                </div>
+
+                <div class="demo-tabs-container">
+                    <div class="demo-tabs">
+                        <button class="demo-tab-btn active" data-tab="demo-agent">
+                            <i data-lucide="message-square-code"></i> Simulador de Agente SDR & Atendimento (WhatsApp)
+                        </button>
+                        <button class="demo-tab-btn" data-tab="demo-vision">
+                            <i data-lucide="eye"></i> Simulador de Visão Computacional & Reconhecimento Facial
+                        </button>
+                    </div>
+
+                    <div class="demo-content-wrapper">
+                        
+                        <!-- DEMO 1: AGENTE WHATSAPP / SDR -->
+                        <div class="demo-tab-content active" id="demo-agent">
+                            <div class="phone-mockup-wrapper">
+                                <div class="phone-mockup">
+                                    <div class="phone-header">
+                                        <div class="avatar-status">
+                                            <div class="avatar-img">
+                                                <i data-lucide="bot"></i>
+                                            </div>
+                                            <div>
+                                                <div class="avatar-name">ConnectUP AI Agent (SDR)</div>
+                                                <div class="avatar-online"><span class="online-dot"></span> Online - Autônomo</div>
+                                            </div>
+                                        </div>
+                                        <div class="phone-actions">
+                                            <span class="badge-sm">IA LLM + CRM</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="phone-body" id="chat-box">
+                                        <div class="chat-msg bot-msg">
+                                            <p>Olá! Sou o Agente Inteligente da ConnectUP. Como posso ajudar sua empresa hoje? Escolha um cenário para testar minha resposta em tempo real:</p>
+                                            <span class="msg-time">Agora</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="phone-scenarios">
+                                        <button class="scenario-btn" onclick="sendChatPreset('Gostaria de agendar uma reunião sobre automação comercial.')">
+                                            📅 Agendamento Comercial
+                                        </button>
+                                        <button class="scenario-btn" onclick="sendChatPreset('Como funciona o reconhecimento facial para academias de Jiu-Jitsu?')">
+                                            🥋 App Jiu-Jitsu
+                                        </button>
+                                        <button class="scenario-btn" onclick="sendChatPreset('Vocês integram IA com meu sistema ERP atual?')">
+                                            ⚙️ Integração ERP/CRM
+                                        </button>
+                                    </div>
+
+                                    <div class="phone-footer">
+                                        <input type="text" id="chat-input" placeholder="Digite uma pergunta para o Agente de IA..." onkeypress="handleChatKeyPress(event)">
+                                        <button class="send-btn" onclick="sendChatMessage()">
+                                            <i data-lucide="send"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DEMO 2: VISÃO COMPUTACIONAL -->
+                        <div class="demo-tab-content" id="demo-vision">
+                            <div class="vision-demo-grid">
+                                <div class="vision-screen">
+                                    <div class="vision-scanner-overlay">
+                                        <img src="assets/ai_dashboard.png" alt="Visão Computacional Scanner" id="vision-target-img">
+                                        <div class="face-box box-1">
+                                            <span class="box-label">FACIAL: ID #8492 (Confirmado)</span>
+                                            <span class="box-confidence">99.4% Match</span>
+                                        </div>
+                                        <div class="face-box box-2">
+                                            <span class="box-label">OCR: Documento Válido</span>
+                                            <span class="box-confidence">Status: Aprovado</span>
+                                        </div>
+                                        <div class="laser-scanner"></div>
+                                    </div>
+                                </div>
+                                <div class="vision-controls">
+                                    <h3>Painel de Diagnóstico em Tempo Real</h3>
+                                    <p class="text-sm">Selecione o modo de análise de Visão Computacional:</p>
+                                    
+                                    <div class="vision-mode-selector">
+                                        <button class="v-mode-btn active" onclick="switchVisionMode('facial')">
+                                            <i data-lucide="scan-face"></i> Reconhecimento Facial (Acesso)
+                                        </button>
+                                        <button class="v-mode-btn" onclick="switchVisionMode('ocr')">
+                                            <i data-lucide="file-text"></i> Leitura de Documentos (OCR)
+                                        </button>
+                                        <button class="v-mode-btn" onclick="switchVisionMode('counting')">
+                                            <i data-lucide="users"></i> Contagem de Pessoas & Objetos
+                                        </button>
+                                    </div>
+
+                                    <div class="vision-telemetry">
+                                        <div class="telemetry-item">
+                                            <span>Algoritmo:</span> <strong id="telemetry-algo">Deep Face Net v4.2</strong>
+                                        </div>
+                                        <div class="telemetry-item">
+                                            <span>Tempo de Resposta:</span> <strong id="telemetry-latency">18ms</strong>
+                                        </div>
+                                        <div class="telemetry-item">
+                                            <span>Precisão estimada:</span> <strong id="telemetry-acc">99.8%</strong>
+                                        </div>
+                                        <div class="telemetry-item">
+                                            <span>Status de Operação:</span> <span class="status-badge-live">LIVE SCANNING</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="alert-box-info">
+                                        <i data-lucide="info"></i>
+                                        <p>Esta tecnologia pode ser instalada diretamente em câmeras existentes (RTSP/IP) ou embarcada em aplicativos mobile.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CASE DE DESTAQUE: APP PARA ACADEMIAS DE JIU-JITSU -->
+        <section class="section" id="cases">
+            <div class="container">
+                <div class="case-showcase-card">
+                    <div class="case-badge">Case de Projeto Embarcado</div>
+                    <div class="case-grid">
+                        <div class="case-info">
+                            <h2>Aplicativo Inteligente para <span class="text-gradient">Academias de Jiu-Jitsu & Artes Marciais</span></h2>
+                            <p class="case-lead">
+                                Uma solução corporativa completa que elimina a burocracia do controle de presença e impulsiona a retenção de alunos usando <strong>Reconhecimento Facial</strong> e <strong>IA Administrativa</strong>.
+                            </p>
+                            
+                            <div class="case-features-list">
+                                <div class="cf-item">
+                                    <div class="cf-icon"><i data-lucide="scan-face"></i></div>
+                                    <div>
+                                        <h4>Check-in Instantâneo por Reconhecimento Facial</h4>
+                                        <p>Identificação automática dos alunos na entrada da academia sem necessidade de catracas físicas ou digitação de senha.</p>
+                                    </div>
+                                </div>
+                                <div class="cf-item">
+                                    <div class="cf-icon"><i data-lucide="check-square"></i></div>
+                                    <div>
+                                        <h4>Controle de Presença & Frequência Automatizado</h4>
+                                        <p>Controle preciso de presença nos tatames e contagem de aulas para graduação de faixas.</p>
+                                    </div>
+                                </div>
+                                <div class="cf-item">
+                                    <div class="cf-icon"><i data-lucide="dollar-sign"></i></div>
+                                    <div>
+                                        <h4>Gestão Financeira & Cobrança por IA</h4>
+                                        <p>Agente inteligente de cobrança via WhatsApp para alunos inadimplentes e renovações automáticas.</p>
+                                    </div>
+                                </div>
+                                <div class="cf-item">
+                                    <div class="cf-icon"><i data-lucide="shield-check"></i></div>
+                                    <div>
+                                        <h4>Administração Inteligente do Tatame</h4>
+                                        <p>Dashboard centralizado para o mestre/gestor visualizar métricas financeiras e frequência em tempo real.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="case-media">
+                            <div class="phone-frame">
+                                <img src="assets/bjj_app.png" alt="Aplicativo Jiu-Jitsu com Reconhecimento Facial" class="case-app-img">
+                                <div class="badge-overlay-bjj">
+                                    <i data-lucide="award"></i> Reconhecimento Facial Ativo
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FERRAMENTA INTERATIVA: DIAGNÓSTICO DE IA PARA EMPRESAS -->
+        <section class="section section-dark" id="diagnostico">
+            <div class="container">
+                <div class="section-header text-center">
+                    <div class="badge-tag">Ferramenta Interativa</div>
+                    <h2>Simulador de <span class="text-gradient">Diagnóstico de IA</span> para sua Empresa</h2>
+                    <p class="section-subtitle">Selecione o perfil do seu negócio e descubra instantaneamente a arquitetura ideal de Inteligência Artificial para alavancar seus resultados.</p>
+                </div>
+
+                <div class="diagnostic-box">
+                    <form id="diagnostic-form" onsubmit="generateDiagnostic(event)">
+                        <div class="diagnostic-grid">
+                            
+                            <!-- Passo 1: Setor -->
+                            <div class="diag-group">
+                                <label><i data-lucide="building-2"></i> 1. Qual o setor da sua empresa?</label>
+                                <select id="diag-sector" required>
+                                    <option value="Academias & Fitness">Academias & Artes Marciais / Fitness</option>
+                                    <option value="Varejo & E-commerce">Varejo & E-commerce</option>
+                                    <option value="Telecomunicações">Telecomunicações & Tecnologia</option>
+                                    <option value="Saúde & Clínicas">Saúde, Médica & Odontologia</option>
+                                    <option value="Serviços Financeiros & Cobrança">Serviços Financeiros / Cobrança / BPO</option>
+                                    <option value="RH & Operações Corporativas">RH & Operações Corporativas</option>
+                                    <option value="Outros Segmentos">Outros Segmentos</option>
+                                </select>
+                            </div>
+
+                            <!-- Passo 2: Porte -->
+                            <div class="diag-group">
+                                <label><i data-lucide="users"></i> 2. Qual o tamanho do negócio?</label>
+                                <select id="diag-size" required>
+                                    <option value="Pequena Empresa (até 20 colaboradores)">Pequena Empresa (Até 20 colaboradores)</option>
+                                    <option value="Média Empresa (20 a 100 colaboradores)">Média Empresa (20 a 100 colaboradores)</option>
+                                    <option value="Grande Empresa / Enterprise (100+ colaboradores)">Grande Empresa / Enterprise (100+ colaboradores)</option>
+                                </select>
+                            </div>
+
+                            <!-- Passo 3: Maior Desafio -->
+                            <div class="diag-group full-width">
+                                <label><i data-lucide="target"></i> 3. Qual seu principal objetivo estratégico hoje?</label>
+                                <div class="goal-radio-cards">
+                                    <label class="goal-card">
+                                        <input type="radio" name="diag-goal" value="Atendimento e Vendas via WhatsApp (SDR)" checked>
+                                        <div class="goal-content">
+                                            <i data-lucide="message-square"></i>
+                                            <span>Atendimento & Vendas (WhatsApp/SDR)</span>
+                                        </div>
+                                    </label>
+                                    <label class="goal-card">
+                                        <input type="radio" name="diag-goal" value="Automação Operacional e Aprovação de Documentos">
+                                        <div class="goal-content">
+                                            <i data-lucide="workflow"></i>
+                                            <span>Automação Operacional & Documentos</span>
+                                        </div>
+                                    </label>
+                                    <label class="goal-card">
+                                        <input type="radio" name="diag-goal" value="Visão Computacional e Controle de Acesso por Face">
+                                        <div class="goal-content">
+                                            <i data-lucide="scan-face"></i>
+                                            <span>Visão Computacional & Acesso</span>
+                                        </div>
+                                    </label>
+                                    <label class="goal-card">
+                                        <input type="radio" name="diag-goal" value="Desenvolvimento de Aplicativo / Produto com IA sob medida">
+                                        <div class="goal-content">
+                                            <i data-lucide="smartphone"></i>
+                                            <span>Novo App ou Produto com IA</span>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="text-center margin-top-lg">
+                            <button type="submit" class="btn btn-primary btn-glow btn-lg">
+                                <i data-lucide="sparkles"></i> Gerar Diagnóstico de IA Personalizado
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Resultado do Diagnóstico -->
+                    <div id="diagnostic-result" class="diagnostic-result-container hidden">
+                        <div class="result-header">
+                            <i data-lucide="cpu" class="icon-gradient"></i>
+                            <h3>Relatório de Diagnóstico Recomendado</h3>
+                        </div>
+                        <div class="result-body grid-2">
+                            <div class="res-col">
+                                <h4><i data-lucide="layers"></i> Arquitetura Tech Recomendada</h4>
+                                <ul id="res-tech-stack"></ul>
+                            </div>
+                            <div class="res-col">
+                                <h4><i data-lucide="trending-up"></i> Estimativa de Ganho de Eficiência</h4>
+                                <div class="roi-metric">
+                                    <span class="roi-value" id="res-roi-val">+65%</span>
+                                    <span class="roi-desc" id="res-roi-desc">Redução no tempo de resposta e automação de processos repetitivos.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="result-footer">
+                            <a id="btn-whatsapp-diag" href="#" target="_blank" class="btn btn-whatsapp">
+                                <i data-lucide="message-circle"></i> Enviar este Diagnóstico para o Engenheiro no WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIÊNCIA & SEGMENTOS ATENDIDOS -->
+        <section class="section" id="segmentos">
+            <div class="container">
+                <div class="section-header text-center">
+                    <div class="badge-tag">Ampla Vivência de Mercado</div>
+                    <h2>Segmentos Atendidos e <span class="text-gradient">Domínio de Mercado</span></h2>
+                    <p class="section-subtitle">A ConnectUP Intelligence possui experiência no desenvolvimento e implementação de IA para diferentes modelos de negócios.</p>
+                </div>
+
+                <div class="segments-grid">
+                    <div class="segment-card"><i data-lucide="bot"></i> Agentes de IA para Atendimento e Vendas</div>
+                    <div class="segment-card"><i data-lucide="workflow"></i> Automação de Processos Corporativos</div>
+                    <div class="segment-card"><i data-lucide="smartphone"></i> Aplicativos Inteligentes Embarcados</div>
+                    <div class="segment-card"><i data-lucide="scan-face"></i> Reconhecimento Facial e Visão Computacional</div>
+                    <div class="segment-card"><i data-lucide="video"></i> Produção de Vídeos e Avatares com IA</div>
+                    <div class="segment-card"><i data-lucide="image"></i> Geração de Imagens & Conteúdo Criativo</div>
+                    <div class="segment-card"><i data-lucide="sparkles"></i> Sistemas de Recomendação Personalizada</div>
+                    <div class="segment-card"><i data-lucide="database"></i> Integração de IA com ERPs e CRMs</div>
+                    <div class="segment-card"><i data-lucide="radio"></i> IA para Telecomunicações</div>
+                    <div class="segment-card"><i data-lucide="shopping-bag"></i> IA para Varejo e E-commerce</div>
+                    <div class="segment-card"><i data-lucide="dumbbell"></i> IA para Academias & Artes Marciais</div>
+                    <div class="segment-card"><i data-lucide="activity"></i> IA para Saúde & Clínicas</div>
+                    <div class="segment-card"><i data-lucide="cloud"></i> Plataformas SaaS com IA</div>
+                    <div class="segment-card"><i data-lucide="code"></i> Produtos Digitais Inteligentes</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ INTERATIVO -->
+        <section class="section section-dark" id="faq">
+            <div class="container">
+                <div class="section-header text-center">
+                    <div class="badge-tag">Dúvidas Frequentes</div>
+                    <h2>Perguntas <span class="text-gradient">Frequentes sobre Engenharia de IA</span></h2>
+                </div>
+
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Qual a diferença entre contratar a ConnectUP e usar ferramentas comuns de IA?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>As ferramentas comuns oferecem respostas genéricas e isoladas. A ConnectUP realiza **Engenharia de Soluções sob medida**, construindo agentes e visões computacionais integradas diretamente aos seus bancos de dados, ERPs, sistemas de cobrança e fluxos operacionais, garantindo segurança e resultados mensuráveis.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Como funciona o reconhecimento facial para academias de Jiu-Jitsu/Artes Marciais?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Utilizamos algoritmos de visão computacional de alta precisão que identificam o aluno na entrada ou no tatame através de um tablet ou câmera IP. O sistema realiza o check-in automático, contabiliza a frequência para graduação de faixas e notifica a gestão caso haja pendências financeiras.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>A IA pode ser integrada aos sistemas que minha empresa já utiliza?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sim! Nossas soluções são desenvolvidas com arquitetura de integração via APIs REST, Webhooks e banco de dados. Integramos agentes com ERPs, CRMs (Salesforce, HubSpot, RD Station, Pipedrive), plataformas de pagamento e sistemas proprietários.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Quanto tempo leva para implementar um projeto de IA sob medida?</span>
+                            <i data-lucide="chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Projetos focados em Agentes de Atendimento via WhatsApp ou automações de processos costumam ser implantados entre 2 a 4 semanas. Produtos mais complexos como Apps com Visão Computacional ou plataformas SaaS completas variam de 4 a 12 semanas conforme o escopo aprovado no diagnóstico.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMULÁRIO DE CONTATO & CTA -->
+        <section class="section CTA-section" id="contato">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <div class="badge-tag">Fale com Nossos Engenheiros</div>
+                        <h2>Pronto para transformar sua empresa com <span class="text-gradient">Inteligência Artificial?</span></h2>
+                        <p>Entre em contato para agendar uma reunião estratégica de diagnóstico com nossos especialistas em engenharia de IA.</p>
+                        
+                        <div class="direct-contacts">
+                            <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20Engenheiro%20de%20IA%20da%20ConnectUP." target="_blank" class="contact-item">
+                                <div class="c-icon whatsapp"><i data-lucide="message-circle"></i></div>
+                                <div>
+                                    <span class="c-label">WhatsApp Direto</span>
+                                    <span class="c-val">Falar com Consultor Senior</span>
+                                </div>
+                            </a>
+                            <div class="contact-item">
+                                <div class="c-icon email"><i data-lucide="mail"></i></div>
+                                <div>
+                                    <span class="c-label">E-mail Corporativo</span>
+                                    <span class="c-val">contato@connectup.ai</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="c-icon location"><i data-lucide="map-pin"></i></div>
+                                <div>
+                                    <span class="c-label">Atendimento</span>
+                                    <span class="c-val">Projetos em todo o Brasil e Internacional</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-card">
+                        <h3>Solicite um Orçamento ou Proposta</h3>
+                        <form id="contact-form" onsubmit="handleContactSubmit(event)">
+                            <div class="form-group">
+                                <label for="c-name">Seu Nome Completo *</label>
+                                <input type="text" id="c-name" placeholder="Ex: Rodrigo Silva" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="c-company">Sua Empresa *</label>
+                                <input type="text" id="c-company" placeholder="Ex: ConnectUP Tech" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="c-email">E-mail Corporativo *</label>
+                                    <input type="email" id="c-email" placeholder="seu@empresa.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="c-phone">WhatsApp / Telefone *</label>
+                                    <input type="tel" id="c-phone" placeholder="(11) 99999-9999" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="c-interest">Interesse Principal</label>
+                                <select id="c-interest">
+                                    <option value="Agentes de IA & WhatsApp">Agentes de IA & WhatsApp</option>
+                                    <option value="Automação Empresarial com IA">Automação Empresarial com IA</option>
+                                    <option value="App para Academias de Jiu-Jitsu / Artes Marciais">App para Academias de Jiu-Jitsu / Artes Marciais</option>
+                                    <option value="Visão Computacional & Reconhecimento Facial">Visão Computacional & Reconhecimento Facial</option>
+                                    <option value="Conteúdo Criativo & Avatares IA">Conteúdo Criativo & Avatares IA</option>
+                                    <option value="Desenvolvimento de Produto Digital / SaaS">Desenvolvimento de Produto Digital / SaaS</option>
+                                    <option value="Consultoria Estratégica em IA">Consultoria Estratégica em IA</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="c-msg">Detalhes do Projeto ou Desafio *</label>
+                                <textarea id="c-msg" rows="4" placeholder="Descreva brevemente o que sua empresa precisa resolver..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block btn-glow">
+                                <i data-lucide="send"></i> Enviar Solicitação de Projeto
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="logo-text">
+                    <span class="brand-title">CONNECT<span class="highlight">UP</span></span>
+                    <span class="brand-sub">INTELLIGENCE</span>
+                </div>
+                <p class="footer-desc">Empresa de Engenharia de Soluções em Inteligência Artificial. Projetamos, desenvolvemos e implementamos aplicações inteligentes sob medida.</p>
+            </div>
+
+            <div class="footer-links-group">
+                <h4>Especialidades</h4>
+                <ul>
+                    <li><a href="#especialidades">Agentes de IA</a></li>
+                    <li><a href="#especialidades">Automação Empresarial</a></li>
+                    <li><a href="#especialidades">Apps com IA Embarcada</a></li>
+                    <li><a href="#especialidades">Visão Computacional</a></li>
+                    <li><a href="#especialidades">Conteúdo Criativo IA</a></li>
+                    <li><a href="#especialidades">Produtos Digitais SaaS</a></li>
+                    <li><a href="#especialidades">Consultoria de IA</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links-group">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#posicionamento">Nosso Posicionamento</a></li>
+                    <li><a href="#demos">Demos Interativas</a></li>
+                    <li><a href="#cases">Case Academias Jiu-Jitsu</a></li>
+                    <li><a href="#diagnostico">Simulador de Diagnóstico</a></li>
+                    <li><a href="#segmentos">Segmentos Atendidos</a></li>
+                    <li><a href="#contato">Falar com Engenheiro</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <p>&copy; 2026 ConnectUP Intelligence. Todos os direitos reservados. Engenharia de Soluções em IA.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Script -->
+    <script src="script.js"></script>
+</body>
+</html>
