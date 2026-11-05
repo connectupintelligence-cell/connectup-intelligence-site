@@ -180,20 +180,28 @@ function initNeuralCanvas() {
    ========================================================================== */
 const botKnowledge = [
     {
-        keywords: ['reunião', 'agendar', 'agendamento', 'comercial', 'contato'],
-        reply: "Perfeito! Posso agendar uma reunião diretamente na agenda do nosso Engenheiro de IA. Qual o melhor dia e horário para você?"
+        keywords: ['terceirizar', 'terceirização', 'atendimento', 'sdr', 'whatsapp', 'sac'],
+        reply: "Na ConnectUP, nós terceirizamos a sua operação inteira de atendimento e SDR. Você não precisa contratar nem gerenciar atendentes: nossa IA e equipe operam seus canais 24/7 com resposta instantânea e agendamento de reuniões qualificadas!"
     },
     {
-        keywords: ['jiu-jitsu', 'academia', 'artes marciais', 'tatame', 'faixa', 'reconhecimento facial'],
-        reply: "Nosso sistema para academias de Jiu-Jitsu utiliza Visão Computacional para identificar o aluno por reconhecimento facial ao entrar no tatame. Ele contabiliza a presença para graduação de faixas, automatiza cobranças e elimina mensalidades em atraso via WhatsApp!"
+        keywords: ['custo', 'economizar', 'economia', 'preço', 'valor', 'reduzir', 'redução'],
+        reply: "Ao terceirizar com a ConnectUP, sua empresa reduz em média de 50% a 70% dos custos comparado a manter equipe CLT interna (salários, FGTS, 13º, férias, turnover, rescisões e softwares). Você paga uma mensalidade previsível com SLA de resultado garantido!"
     },
     {
-        keywords: ['erp', 'crm', 'integração', 'sistemas', 'banco de dados', 'api'],
-        reply: "Sim! Desenvolvemos conectores sob medida para integrar nossos Agentes de IA e Visão Computacional a ERPs (TOTVS, SAP, Omie) e CRMs (HubSpot, RD Station, Salesforce) via APIs REST seguras."
+        keywords: ['facil', 'facilities', 'ease', 'modelo', 'como funciona', 'core business'],
+        reply: "Nosso modelo é exatamente como uma empresa de Facilities (como Ease Facilities), mas para a era da Inteligência Artificial. Você foca 100% no seu Core Business (aquilo que dá lucro e você faz melhor), e nós operamos o atendimento, SDR, cobrança e portaria com IA de ponta."
     },
     {
-        keywords: ['preço', 'valor', 'custo', 'orçamento'],
-        reply: "Cada projeto ConnectUP é desenvolvido sob medida conforme as necessidades do cliente. Você pode simular um diagnóstico na seção 'Diagnóstico IA' abaixo ou nos enviar uma mensagem direta para receber uma proposta personalizada."
+        keywords: ['jiu-jitsu', 'academia', 'artes marciais', 'portaria', 'catraca', 'tatame', 'reconhecimento facial'],
+        reply: "Para academias e centros de treinamento, assumimos a recepção e a cobrança! O reconhecimento facial faz o check-in automático dos alunos no tatame sem catracas físicas e nossa IA cobra mensalidades em atraso no WhatsApp com máxima taxa de recuperação."
+    },
+    {
+        keywords: ['cobrança', 'financeiro', 'inadimplência'],
+        reply: "Nosso setor de cobrança terceirizado atua com réguas inteligentes e humanizadas no WhatsApp. Recuperamos até 40% a mais de clientes inadimplentes sem quebrar o relacionamento com eles."
+    },
+    {
+        keywords: ['reunião', 'agendar', 'agendamento', 'contato', 'proposta'],
+        reply: "Excelente! Posso agendar uma apresentação de 15 minutos com nosso Consultor de Operações para mapear os custos da sua empresa e mostrar o plano de desoneração. Qual o seu melhor horário?"
     }
 ];
 
@@ -226,7 +234,7 @@ function sendChatMessage() {
 
     // Simulate AI Thinking
     setTimeout(() => {
-        let replyText = "A ConnectUP Intelligence desenvolve soluções em IA sob medida para otimizar processos e criar produtos digitais inovadores. Gostaria de agendar um diagnóstico técnico?";
+        let replyText = "A ConnectUP Intelligence terceiriza setores não-core da sua empresa para entregar resultados com até 70% de economia e tecnologia de ponta. Deseja agendar um estudo de viabilidade?";
         
         const lowerMsg = message.toLowerCase();
         for (const item of botKnowledge) {
@@ -241,7 +249,7 @@ function sendChatMessage() {
         botDiv.innerHTML = `<p>${replyText}</p><span class="msg-time">Agora</span>`;
         chatBox.appendChild(botDiv);
         chatBox.scrollTop = chatBox.scrollHeight;
-    }, 700);
+    }, 600);
 }
 
 function escapeHtml(text) {
@@ -265,28 +273,28 @@ function switchVisionMode(mode) {
     const box2Label = document.querySelector('.box-2 .box-label');
 
     if (mode === 'facial') {
-        algo.textContent = "Deep Face Net v4.2 (ResNet-101)";
+        algo.textContent = "Facial Neural Net v4.2";
         latency.textContent = "18ms";
-        acc.textContent = "99.8%";
-        box1Label.textContent = "FACIAL: ID #8492 (Confirmado)";
-        box2Label.textContent = "RECONHECIMENTO EM TEMPO REAL";
+        acc.textContent = "Até 65% a menos em portaria";
+        box1Label.textContent = "ACESSO FACIAL: ALUNO CONFIRMADO";
+        box2Label.textContent = "Check-in Automático Sem Filas";
     } else if (mode === 'ocr') {
-        algo.textContent = "Neural OCR & Document Parser v2.0";
-        latency.textContent = "35ms";
-        acc.textContent = "99.4%";
-        box1Label.textContent = "OCR: CNPJ / Documento Extraído";
-        box2Label.textContent = "APROVAÇÃO AUTOMÁTICA";
+        algo.textContent = "Neural OCR & Document Parser";
+        latency.textContent = "30ms";
+        acc.textContent = "Redução de 90% em digitação manual";
+        box1Label.textContent = "OCR: NOTA/CONTRATO IDENTIFICADO";
+        box2Label.textContent = "Alimentação Automática de ERP";
     } else if (mode === 'counting') {
-        algo.textContent = "YOLOv8 Edge Object Counter";
+        algo.textContent = "YOLOv8 Edge Operational Counter";
         latency.textContent = "12ms";
-        acc.textContent = "98.9%";
-        box1Label.textContent = "CONTAGEM: 14 Pessoas / Tatame";
-        box2Label.textContent = "MONITORAMENTO OPERACIONAL";
+        acc.textContent = "Ocupação Monitorada 24/7";
+        box1Label.textContent = "MONITORAMENTO DE OCUPAÇÃO: 14 PESSOAS";
+        box2Label.textContent = "Controle Operacional de Tatame";
     }
 }
 
 /* ==========================================================================
-   DIAGNOSTIC & ROI SIMULATOR FORM
+   DIAGNOSTIC & ROI SIMULATOR FORM (TERCEIRIZAÇÃO & ECONOMIA)
    ========================================================================== */
 function generateDiagnostic(e) {
     e.preventDefault();
@@ -301,59 +309,63 @@ function generateDiagnostic(e) {
     const roiDesc = document.getElementById('res-roi-desc');
     const btnWa = document.getElementById('btn-whatsapp-diag');
 
-    let techStack = [];
-    let roi = "+60%";
-    let desc = "Redução imediata em tarefas repetitivas e ganho em tempo de resposta.";
+    let deliverables = [];
+    let roi = "-65%";
+    let desc = "Economia direta na folha e encargos, substituindo contratações CLT por operação turnkey com IA.";
 
-    if (goal.includes("WhatsApp")) {
-        techStack = [
-            "Agente de IA LLM (WhatsApp Business API)",
-            "Integração nativa com CRM e Banco de Dados",
-            "Qualificação automática de Leads (SDR Autônomo)",
-            "Disparo inteligente de follow-ups e lembretes"
+    if (goal.includes("Atendimento")) {
+        deliverables = [
+            "Terceirização integral do WhatsApp, site e redes sociais (24/7)",
+            "Atendimento inicial imediato (em menos de 5 segundos)",
+            "IA treinada nas regras e tom de voz da sua empresa",
+            "Supervisão e triagem com escalonamento humanizado",
+            "Eliminação de encargos, férias e turnover de equipe de SAC"
         ];
-        roi = "+75%";
-        desc = "Aumento na conversão de vendas e atendimento 24/7 sem fila de espera.";
-    } else if (goal.includes("Automação")) {
-        techStack = [
-            "Motor de Automação de Processos por IA",
-            "OCR Inteligente para leitura de contratos e notas",
-            "Workflows de aprovação financeira autônoma",
-            "Dashboards de controle operacional em tempo real"
+        roi = "-60% a -70%";
+        desc = "Sua empresa economiza até 70% nos custos de atendimento com satisfação do cliente em 98%.";
+    } else if (goal.includes("Comercial")) {
+        deliverables = [
+            "Setor de Pré-Vendas e Prospecção (SDR) terceirizado",
+            "Qualificação automática de leads em até 60 segundos",
+            "Quebra de objeções e nutrição de contatos frios",
+            "Reuniões qualificadas agendadas na agenda dos seus vendedores",
+            "Integração com seu CRM e relatórios semanais de conversão"
         ];
-        roi = "+65%";
-        desc = "Economia de horas de trabalho manual e eliminação de falhas operacionais.";
-    } else if (goal.includes("Visão Computacional")) {
-        techStack = [
-            "Sistema de Reconhecimento Facial em tempo real",
-            "Integração com câmeras de monitoramento (RTSP/IP)",
-            "Controle de acesso instantâneo sem catracas",
-            "Alerta de segurança e relatórios de frequência"
+        roi = "+3x Reuniões";
+        desc = "Multiplicação do volume de reuniões comerciais sem contratar novos pré-vendedores internos.";
+    } else if (goal.includes("Cobrança")) {
+        deliverables = [
+            "Setor de Cobrança e Gestão de Recebíveis terceirizado",
+            "Régua preventiva e ativa de notificações no WhatsApp",
+            "Geração instantânea de Pix Copia e Cola e boletos atualizados",
+            "Negociação cordial de débitos com acordos automáticos",
+            "Redução imediata da inadimplência sem conflito com o cliente"
         ];
-        roi = "+85%";
-        desc = "Automatização total do acesso de pessoas e aumento da segurança corporativa.";
+        roi = "+40% Recuperação";
+        desc = "Recuperação expressiva de mensalidades e faturas atrasadas já no primeiro mês de operação.";
     } else {
-        techStack = [
-            "Desenvolvimento Full-Stack de Aplicativo / SaaS Sob Medida",
-            "IA Embarcada para experiência do usuário e recomendação",
-            "Arquitetura em nuvem escalável com banco de dados seguro",
-            "Módulo de BI e análise preditiva de dados"
+        deliverables = [
+            "Portaria Inteligente e Controle de Acesso por Reconhecimento Facial",
+            "Substituição de recepcionistas ou porteiros físicos em pontos de entrada",
+            "Check-in automático em tablets ou câmeras IP existentes",
+            "Controle de presença e frequência em tempo real",
+            "Economia imediata de postos presenciais com segurança reforçada"
         ];
-        roi = "Diferencial Competitivo";
-        desc = "Criação de um novo ativo digital valioso para sua empresa.";
+        roi = "-65% em Portaria";
+        desc = "Eliminação de custos fixos de portaria física, catracas que quebram e contratações presenciais.";
     }
 
-    stackList.innerHTML = techStack.map(item => `<li>${item}</li>`).join('');
+    stackList.innerHTML = deliverables.map(item => `<li>${item}</li>`).join('');
     roiVal.textContent = roi;
     roiDesc.textContent = desc;
 
     // Build WhatsApp message link
     const waText = encodeURIComponent(
-        `Olá! Realizei o Diagnóstico de IA no site da ConnectUP Intelligence.\n\n` +
-        `*Setor:* ${sector}\n` +
-        `*Porte:* ${size}\n` +
-        `*Objetivo:* ${goal}\n\n` +
-        `Gostaria de agendar uma conversa com um Engenheiro de IA para discutir esse projeto.`
+        `Olá! Realizei a Simulação de Terceirização no site da ConnectUP Intelligence.\n\n` +
+        `*Segmento:* ${sector}\n` +
+        `*Porte Atual:* ${size}\n` +
+        `*Setor a Terceirizar:* ${goal}\n\n` +
+        `Gostaria de agendar uma reunião rápida de 15 minutos para avaliar o plano de desoneração e custos da minha empresa.`
     );
     btnWa.href = `https://wa.me/5511999999999?text=${waText}`;
 
