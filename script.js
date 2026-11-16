@@ -185,11 +185,11 @@ const botKnowledge = [
     },
     {
         keywords: ['custo', 'economizar', 'economia', 'preço', 'valor', 'reduzir', 'redução'],
-        reply: "Ao terceirizar com a ConnectUP, sua empresa reduz em média de 50% a 70% dos custos comparado a manter equipe CLT interna (salários, FGTS, 13º, férias, turnover, rescisões e softwares). Você paga uma mensalidade previsível com SLA de resultado garantido!"
+        reply: "Ao terceirizar com a ConnectUP, sua empresa reduz em média até 50% dos custos comparado a manter equipe CLT interna (salários, FGTS, 13º, férias, turnover, rescisões e softwares). Você paga uma mensalidade previsível com SLA de resultado garantido!"
     },
     {
-        keywords: ['facil', 'facilities', 'ease', 'modelo', 'como funciona', 'core business'],
-        reply: "Nosso modelo é exatamente como uma empresa de Facilities (como Ease Facilities), mas para a era da Inteligência Artificial. Você foca 100% no seu Core Business (aquilo que dá lucro e você faz melhor), e nós operamos o atendimento, SDR, cobrança e portaria com IA de ponta."
+        keywords: ['facil', 'facilities', 'ease', 'modelo', 'como funciona', 'core business', 'sequoia', 'software'],
+        reply: "Nosso modelo segue a tese 'Serviços: O Novo Software'. Não vendemos ferramentas para sua equipe se desdobrar operando. Nós somos o autopiloto: assumimos a operação de Atendimento, Pré-Vendas, Cobrança e Backoffice com IA, entregando o resultado pronto com até 50% de economia."
     },
     {
         keywords: ['jiu-jitsu', 'academia', 'artes marciais', 'portaria', 'catraca', 'tatame', 'reconhecimento facial'],
@@ -234,7 +234,7 @@ function sendChatMessage() {
 
     // Simulate AI Thinking
     setTimeout(() => {
-        let replyText = "A ConnectUP Intelligence terceiriza setores não-core da sua empresa para entregar resultados com até 70% de economia e tecnologia de ponta. Deseja agendar um estudo de viabilidade?";
+        let replyText = "A ConnectUP Intelligence terceiriza setores não-core da sua empresa para entregar resultados com até 50% de economia e tecnologia de ponta. Deseja agendar um estudo de viabilidade?";
         
         const lowerMsg = message.toLowerCase();
         for (const item of botKnowledge) {
@@ -310,7 +310,7 @@ function generateDiagnostic(e) {
     const btnWa = document.getElementById('btn-whatsapp-diag');
 
     let deliverables = [];
-    let roi = "-65%";
+    let roi = "-50%";
     let desc = "Economia direta na folha e encargos, substituindo contratações CLT por operação turnkey com IA.";
 
     if (goal.includes("Atendimento")) {
@@ -321,8 +321,8 @@ function generateDiagnostic(e) {
             "Supervisão e triagem com escalonamento humanizado",
             "Eliminação de encargos, férias e turnover de equipe de SAC"
         ];
-        roi = "-60% a -70%";
-        desc = "Sua empresa economiza até 70% nos custos de atendimento com satisfação do cliente em 98%.";
+        roi = "Até 50% de Economia";
+        desc = "Sua empresa economiza até 50% nos custos de atendimento com satisfação do cliente em nível de excelência.";
     } else if (goal.includes("Comercial")) {
         deliverables = [
             "Setor de Pré-Vendas e Prospecção (SDR) terceirizado",
@@ -331,7 +331,7 @@ function generateDiagnostic(e) {
             "Reuniões qualificadas agendadas na agenda dos seus vendedores",
             "Integração com seu CRM e relatórios semanais de conversão"
         ];
-        roi = "+3x Reuniões";
+        roi = "+3x Reuniões / -50% Custo";
         desc = "Multiplicação do volume de reuniões comerciais sem contratar novos pré-vendedores internos.";
     } else if (goal.includes("Cobrança")) {
         deliverables = [
@@ -351,7 +351,7 @@ function generateDiagnostic(e) {
             "Controle de presença e frequência em tempo real",
             "Economia imediata de postos presenciais com segurança reforçada"
         ];
-        roi = "-65% em Portaria";
+        roi = "Até 50% de Economia";
         desc = "Eliminação de custos fixos de portaria física, catracas que quebram e contratações presenciais.";
     }
 
