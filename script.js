@@ -192,8 +192,8 @@ const botKnowledge = [
         reply: "Nós assumimos a operação completa de Atendimento, Pré-Vendas, Cobrança e Backoffice com Inteligência Artificial e especialistas, entregando o resultado pronto com até 50% de economia."
     },
     {
-        keywords: ['jiu-jitsu', 'academia', 'artes marciais', 'portaria', 'catraca', 'tatame', 'reconhecimento facial'],
-        reply: "Para academias e centros de treinamento, assumimos a recepção e a cobrança! O reconhecimento facial faz o check-in automático dos alunos no tatame sem catracas físicas e nossa IA cobra mensalidades em atraso no WhatsApp com máxima taxa de recuperação."
+        keywords: ['portaria', 'catraca', 'acesso', 'reconhecimento facial', 'face'],
+        reply: "Com a nossa Portaria Inteligente por Visão Computacional, substituímos ou otimizamos portarias e recepções físicas por reconhecimento facial instantâneo, liberando acessos sem filas e reduzindo custos fixos em até 50%!"
     },
     {
         keywords: ['cobrança', 'financeiro', 'inadimplência'],
