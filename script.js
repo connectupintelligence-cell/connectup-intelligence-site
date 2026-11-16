@@ -367,7 +367,7 @@ function generateDiagnostic(e) {
         `*Setor a Terceirizar:* ${goal}\n\n` +
         `Gostaria de agendar uma reunião rápida de 15 minutos para avaliar o plano de desoneração e custos da minha empresa.`
     );
-    btnWa.href = `https://wa.me/5511999999999?text=${waText}`;
+    btnWa.href = `https://wa.me/5512930854529?text=${waText}`;
 
     resultBox.classList.remove('hidden');
     resultBox.scrollIntoView({ behavior: 'smooth' });
@@ -397,6 +397,6 @@ function handleContactSubmit(e) {
     );
 
     // Open WhatsApp with prefilled parameters
-    window.open(`https://wa.me/5511999999999?text=${waMessage}`, '_blank');
+    window.open(`https://wa.me/5512930854529?text=${waMessage}`, '_blank');
     alert("Obrigado pelo contato! Redirecionando para o WhatsApp do nosso especialista...");
 }
