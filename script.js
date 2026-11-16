@@ -189,7 +189,7 @@ const botKnowledge = [
     },
     {
         keywords: ['modelo', 'como funciona', 'core business', 'autopiloto', 'serviço', 'terceirizar'],
-        reply: "Não vendemos ferramentas para sua equipe se desdobrar operando. Nós assumimos a operação completa de Atendimento, Pré-Vendas, Cobrança e Backoffice com IA, entregando o trabalho pronto e com resultado comprovado com até 50% de economia."
+        reply: "Nós assumimos a operação completa de Atendimento, Pré-Vendas, Cobrança e Backoffice com Inteligência Artificial e especialistas, entregando o resultado pronto com até 50% de economia."
     },
     {
         keywords: ['jiu-jitsu', 'academia', 'artes marciais', 'portaria', 'catraca', 'tatame', 'reconhecimento facial'],
