@@ -188,8 +188,8 @@ const botKnowledge = [
         reply: "Ao terceirizar com a ConnectUP, sua empresa reduz em média até 50% dos custos comparado a manter equipe CLT interna (salários, FGTS, 13º, férias, turnover, rescisões e softwares). Você paga uma mensalidade previsível com SLA de resultado garantido!"
     },
     {
-        keywords: ['facil', 'facilities', 'ease', 'modelo', 'como funciona', 'core business', 'sequoia', 'software'],
-        reply: "Nosso modelo segue a tese 'Serviços: O Novo Software'. Não vendemos ferramentas para sua equipe se desdobrar operando. Nós somos o autopiloto: assumimos a operação de Atendimento, Pré-Vendas, Cobrança e Backoffice com IA, entregando o resultado pronto com até 50% de economia."
+        keywords: ['modelo', 'como funciona', 'core business', 'autopiloto', 'serviço', 'terceirizar'],
+        reply: "Não vendemos ferramentas para sua equipe se desdobrar operando. Nós assumimos a operação completa de Atendimento, Pré-Vendas, Cobrança e Backoffice com IA, entregando o trabalho pronto e com resultado comprovado com até 50% de economia."
     },
     {
         keywords: ['jiu-jitsu', 'academia', 'artes marciais', 'portaria', 'catraca', 'tatame', 'reconhecimento facial'],
